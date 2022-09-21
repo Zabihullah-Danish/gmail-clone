@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Gmail Clone</title>
+</head>
+<body>
+
+    <!-- mian div -->
+    <div class="main">
+        <!-- side bar -->
+        <div class="sidebar">
+            <!-- side bar logo -->
+            <div class="sidebar-logo">
+                <button onclick="message()" class="gmail-btn">
+                    <svg style="width:25px;margin-right:10px;;" xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                     viewBox="0 0 512 512"><title>Menu</title><path fill="none" stroke="currentColor"
+                      stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/></svg>
+                </button>
+                <a href="https://gmail.com" target="_blank">
+                <img style="width:100px;" src="./assets/gmail.png" alt="">
+                </a>
+            </div>
+            <!-- compose button -->
+            <div style="padding-left:10px;">
+                <button class="compose-btn">
+                    <svg style="width:25px;" xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                     viewBox="0 0 512 512"><title>Pencil</title><path fill="none" stroke="currentColor"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                       d="M364.13 125.25L87 403l-23 45 44.99-23 277.76-277.13-22.62-22.62zM420.69
+                        68.69l-22.62 22.62 22.62 22.63 22.62-22.63a16 16 0 000-22.62h0a16 16 0 00-22.62 0z"/></svg>
+                    <span style="padding-top:5px;font-weight: bold;">Compose</span>
+                </button>
+                
+            </div>
+            <!-- other menu -->
+            <div class="menu-list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Mail</title>
+                                    <rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="currentColor"
+                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor"
+                                      stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l144 112 144-112"/></svg>
+                            </div>
+                            <div id="span">
+                                Inbox
+                            </div>
+                            <div id="number">
+                                24
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                    <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                     stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Starred
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Time</title>
+                                    <path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" fill="none"
+                                     stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none"
+                                      stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 128v144h96"/></svg>
+                            </div>
+                            <div id="span">
+                                Snoozed
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Send</title>
+                                    <path d="M470.3 271.15L43.16 447.31a7.83 7.83 0 01-11.16-7V327a8 8 0 016.51-7.86l247.62-47c17.36-3.29 17.36-28.15 0-31.44l-247.63-47a8 8 0 01-6.5-7.85V72.59c0-5.74 5.88-10.26 11.16-8L470.3 241.76a16 16 0 010 29.39z" fill="none" stroke="currentColor" 
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Sent
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                   
+                    <li>
+                        <button id="more">
+                            <div style="width:25px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Chevron Down</title>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" 
+                                    stroke-width="48" d="M112 184l144 144 144-144"/></svg>
+                            </div>
+                            <div style="width:70px;padding-top:5px;padding-left:3px;">
+                                More
+                            </div>
+                           
+                        </button>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Bookmark</title>
+                                    <path d="M352 48H160a48 48 0 00-48 48v368l144-128 144 128V96a48 48 0 00-48-48z" fill="none" stroke="currentColor" 
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Importance
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Chatbubble Ellipses</title><path d="M87.48 380c1.2-4.38-1.43-10.47-3.94-14.86a42.63 42.63 0 00-2.54-3.8 199.81 199.81 0 01-33-110C47.64 139.09 140.72 48 255.82 48 356.2 48 440 117.54 459.57 209.85a199 199 0 014.43 41.64c0 112.41-89.49 204.93-204.59 204.93-18.31 0-43-4.6-56.47-8.37s-26.92-8.77-30.39-10.11a31.14 31.14 0 00-11.13-2.07 30.7 30.7 0 00-12.08 2.43L81.5 462.78a15.92 15.92 0 01-4.66 1.22 9.61 9.61 0 01-9.58-9.74 15.85 15.85 0 01.6-3.29z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/><circle cx="160" cy="256" r="32"/><circle cx="256" cy="256" r="32"/><circle cx="352" cy="256" r="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Chats
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Calendar Number</title><rect x="48" y="80" width="416" height="384" rx="48" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M128 48v32M384 48v32M464 160H48M304 260l43.42-32H352v168M191.87 306.63c9.11 0 25.79-4.28 36.72-15.47a37.9 37.9 0 0011.13-27.26c0-26.12-22.59-39.9-47.89-39.9-21.4 0-33.52 11.61-37.85 18.93M149 374.16c4.88 8.27 19.71 25.84 43.88 25.84 28.59 0 52.12-15.94 52.12-43.82 0-12.62-3.66-24-11.58-32.07-12.36-12.64-31.25-17.48-41.55-17.48"/></svg>
+                            </div>
+                            <div id="span">
+                                Schedualed
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Chatbox</title><path d="M408 64H104a56.16 56.16 0 00-56 56v192a56.16 56.16 0 0056 56h40v80l93.72-78.14a8 8 0 015.13-1.86H408a56.16 56.16 0 0056-56V120a56.16 56.16 0 00-56-56z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Drafts
+                            </div>
+                            <div id="number">
+                                11
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Bookmark</title>
+                                    <path d="M352 48H160a48 48 0 00-48 48v368l144-128 144 128V96a48 48 0 00-48-48z" fill="none" stroke="currentColor" 
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                All Mail
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Stopwatch</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 232v-80"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M256 88V72M132 132l-12-12"/><circle cx="256" cy="272" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path d="M256 96a176 176 0 10176 176A176 176 0 00256 96z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Spam
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Trash</title><path d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 112h352"/><path d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                            </div>
+                            <div id="span">
+                                Trash
+                            </div>
+                            <div id="number">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="content-bar">
+            <div class="header">
+                <div>
+                    <form style="display:flex;flex-direction:row;margin:10px;" action="">
+                        <svg style="width:30px;margin-right:-35px;z-index: 1;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+                        <input style="padding:10px;width:500px;background-color: rgb(225, 229, 230);
+                        border-radius:10px;padding-left:30px;outline-style:inset;" type="text">
+                        <svg style="width:30px;margin-left:-35px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Options</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 128h80M64 128h240M368 384h80M64 384h240M208 256h240M64 256h80"/><circle cx="336" cy="128" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="176" cy="256" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="336" cy="384" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+
+                    </form>
+                </div>
+                <div style="display: flex;flex-direction:row;margin-right:20px;">
+                    <button style="border:none;background-color:transparent;cursor:pointer;">
+                        <svg style="width:30px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Help Circle</title><path d="M256 80a176 176 0 10176 176A176 176 0 00256 80z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path d="M200 202.29s.84-17.5 19.57-32.57C230.68 160.77 244 158.18 256 158c10.93-.14 20.69 1.67 26.53 4.45 10 4.76 29.47 16.38 29.47 41.09 0 26-17 37.81-36.37 50.8S251 281.43 251 296" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="28"/><circle cx="250" cy="348" r="20"/></svg>
+                    </button>
+                    <button style="border:none;background-color:transparent;cursor:pointer;">
+                        <svg style="width:30px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Settings</title><path d="M262.29 192.31a64 64 0 1057.4 57.4 64.13 64.13 0 00-57.4-57.4zM416.39 256a154.34 154.34 0 01-1.53 20.79l45.21 35.46a10.81 10.81 0 012.45 13.75l-42.77 74a10.81 10.81 0 01-13.14 4.59l-44.9-18.08a16.11 16.11 0 00-15.17 1.75A164.48 164.48 0 01325 400.8a15.94 15.94 0 00-8.82 12.14l-6.73 47.89a11.08 11.08 0 01-10.68 9.17h-85.54a11.11 11.11 0 01-10.69-8.87l-6.72-47.82a16.07 16.07 0 00-9-12.22 155.3 155.3 0 01-21.46-12.57 16 16 0 00-15.11-1.71l-44.89 18.07a10.81 10.81 0 01-13.14-4.58l-42.77-74a10.8 10.8 0 012.45-13.75l38.21-30a16.05 16.05 0 006-14.08c-.36-4.17-.58-8.33-.58-12.5s.21-8.27.58-12.35a16 16 0 00-6.07-13.94l-38.19-30A10.81 10.81 0 0149.48 186l42.77-74a10.81 10.81 0 0113.14-4.59l44.9 18.08a16.11 16.11 0 0015.17-1.75A164.48 164.48 0 01187 111.2a15.94 15.94 0 008.82-12.14l6.73-47.89A11.08 11.08 0 01213.23 42h85.54a11.11 11.11 0 0110.69 8.87l6.72 47.82a16.07 16.07 0 009 12.22 155.3 155.3 0 0121.46 12.57 16 16 0 0015.11 1.71l44.89-18.07a10.81 10.81 0 0113.14 4.58l42.77 74a10.8 10.8 0 01-2.45 13.75l-38.21 30a16.05 16.05 0 00-6.05 14.08c.33 4.14.55 8.3.55 12.47z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                    </button>
+                    <button style="border:none;background-color:transparent;cursor:pointer;">
+                        <svg style="width:30px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Grid</title><rect x="48" y="48" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="288" y="48" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="48" y="288" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="288" y="288" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                    </button>
+                    <img src="./assets/pic.jpg" alt="" style="width:30px;height:30px;border-radius:100%;padding-top:15px;cursor:pointer;">
+                </div>
+            </div>
+            <div id="category">
+                <div style="padding:20px 40px;">
+                    Primary
+                </div>
+                <div style="padding:20px 40px;">
+                    Promotions
+                </div>
+                <div style="padding:20px 40px;">
+                    Social
+                </div>
+            </div>
+            <div class="emails">
+                <table style="width:1200px;">
+                    <tr clss="email-rows" style="padding:10px;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                    <tr clss="email-rows" style="padding:10px;border:1px solid gray;">
+                        <td style="width:20px">
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Star</title>
+                                <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                                 stroke="currentColor" stroke-linejoin="round" stroke-width="32"/></svg>  
+                        </td>
+                        <td style="width:300px;padding-right:10px;">
+                            Lorem ipsum dolor sit amet consectetur
+                        </td>
+                        <td style="width:700px;overflow-wrap:break-word;">
+                            corporis dolorum fuga. Perspiciatis quos laudantium fugiat expedita maiores nisi 
+                        </td>
+                        <td style="width:100px">10:57 PM</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        function message(){
+            console.log("Hi");
+        }
+    </script>
+</body>
+</html>

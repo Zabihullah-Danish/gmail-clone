@@ -1,0 +1,131 @@
+
+        body{
+            margin:0px;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .sidebar{
+            display: flex;
+            flex-direction: column;
+            width:15%;
+            height:950px;
+            /* border:1px solid gray; */
+            background-color: #edf4f8;
+            /* padding-left:10px; */
+            
+        }
+
+        .content-bar{
+            display: flex;
+            flex-direction: column;
+            width:85%;
+            border:1px solid #c7c9cc;
+            
+        }
+
+        .sidebar-logo{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-left:20px;
+        
+        }
+        .gmail-btn{
+            background-color: transparent;
+            border:none;
+            cursor:pointer;
+        }
+
+        .compose-btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color:#c2e7ff;
+            padding:20px;
+            border-radius:20px;
+            border:none;
+            cursor: pointer;
+            width:150px;
+        }
+        .compose-btn:hover{
+            box-shadow:2px 2px 2px gray;
+        }
+
+        .menu-list{
+            margin-right:4px;
+        }
+
+        .menu-list ul{
+            
+            padding:0;
+        }
+        .menu-list ul li a{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-decoration: none;
+            color:black;
+
+            padding:0 15px;
+        }
+        .menu-list ul li:hover{
+            background-color: lightgray;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius:15px;
+        }
+
+        #svg{
+            width:20px;
+            /* border:1px solid red; */
+        }
+        #span{
+            width:140px;
+            padding:2px;
+            /* border:1px solid blue; */
+        }
+        #number{
+            width:50px;
+            padding:5px;
+            /* border:1px solid pink */
+        }
+
+        #more{
+            border:none;
+            background-color:transparent;
+            display:inline-flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-left:10px;
+
+        }
+        #more:hover{
+            /* background-color:lightgray; */
+            cursor: pointer;
+        }
+
+        .header{
+            display:flex;
+            flex-direction: row;
+            justify-content:space-between;
+            background-color: #f7fafd;
+            padding:10px;
+        }
+
+        #category{
+            display:flex;flex-direction:row;margin-top:20px;font-size:large;border-bottom:1px solid lightgray;
+        }
+        #category div:hover{
+            background-color:lightgray;
+        }
+
+        table tr:hover{
+            background-color:#edf4f8;
+            cursor:pointer;
+            /* border-bottom:1px solid #595a5a; */
+            box-shadow: 1px 1px 1px 1px;
+
+        }
